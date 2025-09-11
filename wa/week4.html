@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week4</title>
+    <link rel="stylesheet" href="https://use.typekit.net/vdr3cdb.css">
+    <style>
+        html {
+            font-family: "nicholas", sans-serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        /*Typography Hierarchy*/
+        p {
+            font-size: 16px;
+        }
+
+        .small-text {
+            font-size: 12px;
+        }
+
+        h3 {
+            font-size: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        /*spacing sytem*/
+        .spacing-xs {
+            margin: 8px;
+        }
+
+        .spacing-sm {
+            margin: 16px;
+        }
+
+        .spacing-md {
+            margin: 24px;
+        }
+
+        .spacing-lg {
+            margin: 32px;
+        }
+
+        .spacing-xl {
+            margin: 48px;
+        }
+
+        /*color palet display*/
+        .flex {
+            display: flex;
+            flex-direction: row;
+            gap: 16px
+        }
+
+        .color-box {
+            height: 100px;
+            width: 100px;
+            padding: 16px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        #box1 {
+            background-color: #0E3C4C;
+            color: #FFF5DA;
+        }
+
+        #box2 {
+            background-color: #395831;
+            color: #FFF5DA
+        }
+
+        #box3 {
+            background-color: #FFFEC0;
+            color: #0E3C4C;
+        }
+
+        #box4 {
+            background-color: #C5DAF6;
+            color: #0E3C4C;
+
+        }
+
+        #box5 {
+            background-color: #FFF5DA;
+            color: #0E3C4C;
+        }
+
+    /*botton component*/
+        .button {
+            background-color: #0E3C4C;
+            color: #FFF5DA;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #C5DAF6;
+            color: #0E3C4C;
+        }
+
+        .button:focus {
+            outline: 3px solid #395831;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex">
+        <div class="color-box" id="box1">#0E3C4C<br>10.92:1</div>
+        <div class="color-box" id="box2">#395831<br>7.39:1</div>
+        <div class="color-box" id="box3">#FFFEC0<br>11.41:1</div>
+        <div class="color-box" id="box4">#C5DAF6<br>8.32:1</div>
+        <div class="color-box" id="box5">#FFF5DA<br>10.92:1</div>
+    </div>
+    <h1 class="spacing-xl">This is a heading 1</h1>
+    <h2 class="spacing-lg">This is a heading 2</h2>
+    <h3 class="spacing-md">This is a heading 3</h3>
+    <p class="spacing-sm">This is paragraph text</p>
+    <p class="small-text spacing-xs">This is small text</p>
+    <a href="week3.html" class="button spacing-lg">Click Me</a>
+
+</body>
+
+</html>
