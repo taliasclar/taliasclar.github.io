@@ -1,0 +1,151 @@
+/* Base Styles */
+body {
+    font-family: "nicholas", sans-serif;
+    color: #0E3C4C;
+    background-color: #FFF5DA;
+    margin: 0;
+}
+
+/* Typography */
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 24px 0 16px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 20px 0 12px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 16px 0 8px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.small-text {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+/* Spacing */
+.spacing-xs {
+    margin: 8px;
+}
+
+.spacing-sm {
+    margin: 16px;
+}
+
+.spacing-md {
+    margin: 24px;
+}
+
+.spacing-lg {
+    margin: 32px;
+}
+
+/* Header & Footer */
+header,
+footer {
+    background-color: #0E3C4C;
+    color: #FFF5DA;
+    padding: 16px 32px;
+    text-align: center;
+}
+
+/* Navigation */
+nav {
+    margin-top: 8px;
+    text-align: center;
+}
+
+nav a {
+    color: #FFF5DA;
+    margin: 0 12px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover,
+nav a:focus {
+    color: #C5DAF6;
+    outline: 2px solid #C5DAF6;
+    outline-offset: 2px;
+}
+
+nav a[aria-current="page"] {
+    color: #C5DAF6;
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+/* Button */
+.button {
+    background-color: #0E3C4C;
+    color: #FFF5DA;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+    background-color: #C5DAF6;
+    color: #0E3C4C;
+    outline: 2px solid #395831;
+    outline-offset: 2px;
+}
+
+.contact-link {
+    color: #0E3C4C;          
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-link:hover,
+.contact-link:focus {
+    color: #C5DAF6;            
+    text-decoration: underline; 
+    outline: none;             
+}
+
+
+/* Section Backgrounds */
+.bg-primary {
+    background-color: #0E3C4C;
+    color: #FFF5DA;
+}
+
+.bg-secondary {
+    background-color: #395831;
+    color: #FFF5DA;
+}
+
+.bg-accent {
+    background-color: #C5DAF6;
+    color: #0E3C4C;
+}
+
+.bg-highlight {
+    background-color: #FFFEC0;
+    color: #0E3C4C;
+}
+
+.bg-light {
+    background-color: #FFF5DA;
+    color: #0E3C4C;
+}
