@@ -1,0 +1,281 @@
+/* Global Styles */
+:root {
+    --brand-blue: #0E3C4C;
+    --brand-green: #395831;
+    --cream: #FFF5DA;
+    --highlight: #C5DAF6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "nicholas", sans-serif;
+    line-height: 1.6;
+    background-color: var(--cream);
+    color: var(--brand-blue);
+}
+
+/* Navigation */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--brand-blue);
+    position: relative;
+    padding: 0.5em 1em;
+}
+
+.nav-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cream);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2em;
+}
+
+.nav-menu a {
+    color: var(--cream);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--highlight);
+    outline: 2px solid var(--highlight);
+    outline-offset: 2px;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger {
+    background-color: var(--brand-green);
+    height: 4px;
+    width: 30px;
+}
+
+/* Mobile Nav */
+@media screen and (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        background-color: var(--brand-green);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        padding: 1em;
+        width: 200px;
+        gap: 1em;
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .nav-toggle.open .hamburger {
+        background-color: var(--brand-blue);
+    }
+}
+
+/* Homepage Grid */
+.homepage {
+    display: grid;
+    grid-template-areas:
+        "mission"
+        "resources"
+        "events"
+        "community"
+        "contact";
+    gap: 1em;
+    padding: 1em;
+}
+
+.mission {
+    grid-area: mission;
+    text-align: center;
+    padding: 2em;
+    background-color: var(--highlight);
+    color: var(--brand-blue);
+    border-radius: 8px;
+}
+
+.resources {
+    grid-area: resources;
+    background-color: var(--brand-blue);
+    color: var(--highlight);
+    padding: 1em;
+}
+
+.events {
+    grid-area: events;
+    background-color: var(--brand-blue);
+    color: var(--highlight);
+    padding: 1em;
+}
+
+.community {
+    grid-area: community;
+    background-color: var(--brand-blue);
+    color: var(--highlight);
+    padding: 1em;
+}
+
+.contact {
+    grid-area: contact;
+    background-color: var(--brand-blue);
+    color: var(--highlight);
+    padding: 1em;
+}
+
+@media screen and (min-width: 768px) {
+    .homepage {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "mission mission"
+            "resources events"
+            "community contact";
+    }
+}
+
+/* CTA Button */
+.cta {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 0.75em 1.5em;
+    background-color: var(--brand-green);
+    color: var(--cream);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta:hover {
+    background-color: #2a4025;
+    transform: scale(1.05);
+}
+
+.cta:focus {
+    outline: 2px solid var(--brand-blue);
+    outline-offset: 3px;
+}
+
+/* Section Links */
+.section-link {
+    text-decoration: none;
+    color: var(--cream);
+    display: block;
+}
+
+.section-link:hover {
+    color: #FFFEC0;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-areas:
+        "mission"
+        "filters"
+        "cards";
+    gap: 1em;
+    padding: 1em;
+}
+
+.filter-controls {
+    grid-area: filters;
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    margin: 1em;
+}
+
+.resource-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+}
+
+
+.card {
+    background-color: var(--brand-blue);
+    color: var(--highlight);
+    padding: 1em;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card .details {
+    display: none;
+    margin-top: 0.5em;
+}
+
+.card.expanded .details {
+    display: block;
+}
+
+/* Hidden class for filtering */
+.hidden {
+    display: none !important;
+}
+
+.filter-controls button {
+    padding: 0.5em 1em;
+    border: 2px solid var(--brand-blue);
+    border-radius: 6px;
+    background-color: var(--cream);
+    color: var(--brand-blue);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-controls button:hover {
+    background-color: var(--highlight);
+}
+
+.filter-controls button.active {
+    background-color: var(--brand-blue);
+    color: var(--cream);
+    border-color: var(--brand-green);
+}
+
+/* Responsive adjustments */
+@media screen and (min-width: 1200px) {
+    .resource-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--brand-blue);
+    color: var(--cream);
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+}
