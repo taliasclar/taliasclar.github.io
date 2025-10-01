@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- HEADER / NAV -->
+    <nav class="main-nav">
+        <div class="nav-brand">Running & Yoga Community</div>
+        <button class="nav-toggle" aria-label="Toggle navigation menu">
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+            <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu hide">
+            <li><a href="week6.html">Home</a></li>
+            <li><a href="week6.resources.html">Resources</a></li>
+            <li><a href="week6.events.html">Events</a></li>
+            <li><a href="week6.community.html">Community</a></li>
+            <li><a href="week6.contact.html">Contact</a></li>
+        </ul>
+        <div class="theme-toggle">
+            <button id="theme-btn"> Dark Mode</button>
+        </div>
+
+    </nav>
+
+    <!-- MAIN CONTENT GRID -->
+    <main class="homepage">
+        <!-- Mission Statement -->
+        <section id="home" class="mission">
+            <h1>Move Together, Breathe Together</h1>
+            <p>We bring runners and yogis together to build strength, balance, and community.</p>
+            <a href="week6.events.html" class="cta">See Upcoming Events</a>
+        </section>
+
+        <!-- Resources -->
+        <section id="resources" class="resources">
+            <h2>
+                <a href="week6.resources.html" class="section-link">Resources</a>
+            </h2>
+            <p>Find training plans, yoga sequences, and wellness tips to support your journey.</p>
+        </section>
+
+        <!-- Events -->
+        <section id="events" class="events">
+            <h2> <a href="week6.events.html" class="section-link">Events</a></h2>
+            <p>Check out our upcoming group runs, yoga classes, and workshops.</p>
+        </section>
+
+        <!-- Community -->
+        <section id="community" class="community">
+            <h2><a href="week6.community.html" class="section-link">Community</a></h2>
+            <p>Connect with fellow members, share stories, and support each other's goals.</p>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+            <h2><a href="week6.contact.html" class="section-link">Contact</a></h2>
+            <p>Have questions? Reach out and we’ll be happy to help.</p>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Running & Yoga Community</p>
+    </footer>
+
+    <script>
+        // Nav toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            const shown = navMenu.classList.toggle("show");
+            navMenu.classList.toggle("hide");
+            navToggle.classList.toggle('open', shown);
+            navToggle.setAttribute("aria-expanded", shown ? "true" : "false");
+        });
+
+        // ------------------------------
+        // Resource Filtering
+        // ------------------------------
+        const filterButtons = document.querySelectorAll('.filter-controls button');
+        const resourceCards = document.querySelectorAll('.resource-cards .card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.dataset.category;
+
+                // Update active state on buttons
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-selected', 'false');
+                });
+                button.classList.add('active');
+                button.setAttribute('aria-selected', 'true');
+
+                // Show/hide cards
+                resourceCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        resourceCards.forEach(card => {
+            const expandable = card.querySelector('.expandable');
+
+            // Keyboard interaction
+            expandable.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault(); // Prevent scrolling for Space
+                    card.classList.toggle('expanded');
+                }
+            });
+
+            // Mouse click interaction
+            expandable.addEventListener('click', () => {
+                card.classList.toggle('expanded');
+            });
+        });
+        // Save user's theme choice
+        let btn = document.querySelector('#theme-btn');
+        btn.addEventListener('click', theme);
+
+        // Initialize theme on page load
+        setTheme(document.body.className || "light");
+
+        function theme() {
+            setTheme(document.body.className || "light");
+        }
+
+        function setTheme(theme) {
+            let inTheme = theme;
+            if (inTheme == 'dark') {
+                theme = 'light';
+            } else {
+                theme = 'dark';
+            }
+            localStorage.setItem('userTheme', theme);
+            document.body.className = theme;
+
+            // Update button text
+            btn.textContent = theme === 'light' ? " Dark Mode" : " Light Mode";
+        }
+
+        // Load saved theme on page load
+        window.addEventListener('load', function () {
+            const savedTheme = localStorage.getItem('userTheme') || 'light';
+            setTheme(savedTheme);
+        });
+
+    </script>
+
+</body>
+
+</html>

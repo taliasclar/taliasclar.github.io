@@ -33,8 +33,6 @@ body.dark {
 body {
     font-family: "nicholas", sans-serif;
     line-height: 1.6;
-    background-color: var(--cream);
-    color: var(--brand-blue);
 }
 
 /* Navigation */
