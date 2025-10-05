@@ -9,6 +9,8 @@
     <script src="week6.js" defer></script>
 </head>
 
+
+
 <body>
     <!-- HEADER / NAV -->
     <nav class="main-nav">
@@ -24,7 +26,9 @@
             <li><a href="week6.events.html">Events</a></li>
             <li><a href="week6.community.html">Community</a></li>
             <li><a href="week6.contact.html">Contact</a></li>
+            <li><button id="theme-btn">Dark Mode</button></li>
         </ul>
+
     </nav>
 
     <!-- MAIN CONTENT GRID -->
@@ -58,15 +62,34 @@
 
         <!-- Contact -->
         <section id="contact" class="contact">
-            <h2><a href="week6.contact.html" class= "section-link">Contact</a></h2>
+            <h2><a href="week6.contact.html" class="section-link">Contact</a></h2>
             <p>Have questions? Reach out and we’ll be happy to help.</p>
         </section>
     </main>
 
+
     <!-- FOOTER -->
     <footer>
         <p>© 2025 Running & Yoga Community</p>
+        <button id="privacy-btn">Privacy & Data Use</button>
     </footer>
+
+    <!-- PRIVACY POPUP -->
+    <div id="privacy-popup" class="popup" style="display:none;">
+        <p>
+            We collect your theme preference and interaction data to improve your
+            experience. Stored locally in your browser. You can clear your data or opt out anytime.
+        </p>
+
+        <label>
+            <input type="checkbox" id="opt-out">
+            Do not save my data
+        </label>
+
+        <button id="clear-data">Clear My Data</button>
+        <button id="close-popup">&times;</button>
+    </div>
+
 </body>
 
 </html>

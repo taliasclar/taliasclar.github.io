@@ -71,6 +71,24 @@ body {
     outline-offset: 2px;
 }
 
+/* Theme button inside nav */
+#theme-btn {
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var(--cream);
+    color: var(--brand-blue);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#theme-btn:hover {
+    background-color: var(--highlight);
+    transform: scale(1.05);
+}
+
+
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -84,22 +102,6 @@ body {
     background-color: var(--brand-green);
     height: 4px;
     width: 30px;
-}
-
-.theme-toggle button {
-    padding: 0.5em 1em;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    background-color: var(--cream);
-    color: var(--brand-blue);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.theme-toggle button:hover {
-    background-color: var(--highlight);
-    transform: scale(1.05);
 }
 
 /* Mobile Nav */
@@ -248,8 +250,9 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2em;
+    container-type: inline-size;
+    container-name: resource-cards-container;
 }
-
 
 .card {
     background-color: var(--brand-blue);
@@ -257,6 +260,8 @@ body {
     padding: 1em;
     border-radius: 8px;
     transition: transform 0.2s ease;
+    width: 100%;
+    height: auto;
 }
 
 .card:hover {
@@ -304,6 +309,70 @@ body {
     }
 }
 
+/* Container queries to scale card size */
+@container resource-cards-container (min-width: 400px) {
+    .card {
+        padding: 1.5em;
+    }
+}
+
+@container resource-cards-container (min-width: 600px) {
+    .card {
+        padding: 2em;
+    }
+}
+
+@container resource-cards-container (min-width: 800px) {
+    .card {
+        padding: 2.5em;
+    }
+}
+
+.popup {
+  display: none; /* hidden by default */
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  max-width: 300px;
+  background-color: var(--cream);
+  color: var(--brand-blue);
+  border: 2px solid var(--brand-blue);
+  border-radius: 8px;
+  padding: 1em;
+}
+
+/* Dark mode support */
+body.dark .popup {
+  background-color: var(--brand-blue);
+  color: var(--cream);
+  border-color: var(--highlight);
+}
+
+/* Buttons inside popup */
+.popup button {
+  margin-top: 0.5em;
+  padding: 0.3em 0.6em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#clear-data {
+  background-color: var(--brand-green);
+  color: var(--cream);
+}
+
+#clear-data:hover {
+  background-color: #2a4025;
+}
+
+#close-popup {
+  background: none;
+  color: inherit;
+  float: right;
+  font-size: 1.2rem;
+}
 
 /* Footer */
 footer {
