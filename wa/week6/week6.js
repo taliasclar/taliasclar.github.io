@@ -78,28 +78,11 @@ function theme() {
     // Update button text
     btn.textContent = newTheme === 'light' ? " Dark Mode" : " Light Mode";
 }
-const privacyBtn = document.getElementById("privacy-btn");
-const popup = document.getElementById("privacy-popup");
-const closeBtn = document.getElementById("close-popup");
-const clearBtn = document.getElementById("clear-data");
-
-// Show popup
-privacyBtn.addEventListener("click", () => {
-    popup.style.display = "block";
-});
-
-// Close popup
-closeBtn.addEventListener("click", () => {
-    popup.style.display = "none";
-});
-
-// Clear localStorage (theme + any other saved data)
-clearBtn.addEventListener("click", () => {
-    localStorage.clear();
-    alert("Your data has been cleared!");
-    popup.style.display = "none";
-
-    // Reset theme to default after clearing
-    document.body.className = 'light';
-    btn.textContent = " Dark Mode";
+document.getElementById("privacy-btn").addEventListener("click", () => {
+    import('./Privacy.js')
+        .then(module => {
+            module.initPopup(); // sets up event listeners
+            module.showPopup(); // immediately show the popup
+        })
+        .catch(err => console.error('Failed to load privacy module:', err));
 });
