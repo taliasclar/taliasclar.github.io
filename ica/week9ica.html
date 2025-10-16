@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f0;
+      font-family: sans-serif;
+    }
+
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.4s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background: #45a049;
+      transform: scale(1.05);
+    }
+
+    button.success {
+      background: #2ecc71;
+      transform: scale(1);
+    }
+
+    button.success::after {
+      content: "✔";
+      margin-left: 8px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <button id="submitBtn">Submit</button>
+
+  <script>
+    const btn = document.getElementById('submitBtn');
+    btn.addEventListener('click', () => {
+      btn.classList.add('success');
+      btn.textContent = 'Success';
+      btn.disabled = true;
+    });
+  </script>
+
+</body>
+</html>
