@@ -1,7 +1,6 @@
 let triviaBtn = document.querySelector("#js-new-quote").addEventListener('click', newTrivia);
 
-let answerBtn = document.querySelector('#js-tweet');
-addEventListener('click', newAnswer);
+let answerBtn = document.querySelector('#js-tweet').addEventListener('click', newAnswer);
 
 let current = {
     question: "",
