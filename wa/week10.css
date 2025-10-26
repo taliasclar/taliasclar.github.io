@@ -1,0 +1,121 @@
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: "Georgia", serif;
+  background-color: #f8f0e3;
+  transition: background-color 0.5s ease; 
+  color: #333;
+}
+
+.app {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+header {
+  width: 100%;
+  font-size: 32px;
+  text-align: center;
+  padding: 20px;
+  background:#ffc0cb;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Quotes section */
+.quotes {
+  padding: 30px 50px;
+  min-height: 200px;
+  text-align: center;
+}
+
+.quote-text {
+  font-size: 24px;
+  color: #4a2b0f;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+#song, #album {
+  font-size: 18px;
+  margin: 5px 0;
+  color: #555;
+}
+
+/* Controls */
+.controls {
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* Buttons */
+.button {
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.new-quote {
+  background-color: #c23b22; 
+}
+
+.new-quote:hover {
+  background-color: #e74c3c;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Info paragraphs */
+.info {
+  max-width: 600px;
+  margin: 30px auto 0;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 16px;
+  color: #444;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .app {
+    width: 90%;
+  }
+  .quote-text {
+    font-size: 20px;
+  }
+  #song, #album {
+    font-size: 16px;
+  }
+  .button {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
