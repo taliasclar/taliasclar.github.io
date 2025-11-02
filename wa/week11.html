@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Search</title>
+  <link rel="stylesheet" href="week11.css">
+</head>
+<body>
+  <h2>Movie Search</h2>
+
+  <input type="text" id="search" placeholder="Enter a movie title" />
+  <button onclick="searchMovies()">Search</button>
+
+  <h3>Results</h3>
+  <div id="results"></div>
+
+  <h3>Favorites</h3>
+  <div id="favorites"></div>
+  <button onclick="exportFavorites()">Export Favorites</button>
+  <button onclick="clearFavorites()">Clear Favorites</button>
+
+  <script src="week11.js"></script>
+</body>
+</html>
