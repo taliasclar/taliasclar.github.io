@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EquiJobs</title>
+  <link rel="stylesheet" href="week12.css">
+</head>
+<body>
+  <h1>EquiJobs</h1>
+  <p>Transparent, equity-focused job recommendations</p>
+
+  <div id="filters">
+    <h3>Adjust Your Preferences</h3>
+
+    <label>Creativity
+      <input type="range" id="creative" min="0" max="1" step="0.1" value="0.5">
+    </label>
+    <label>Equity Focus
+      <input type="range" id="equity" min="0" max="1" step="0.1" value="0.5">
+    </label>
+    <label>Work-Life Balance
+      <input type="range" id="workLife" min="0" max="1" step="0.1" value="0.5">
+    </label>
+    <label>Company Size (0=small, 1=large)
+      <input type="range" id="companySize" min="0" max="1" step="0.1" value="0.5">
+    </label>
+
+    <button onclick="applyFilters()">Apply Filters</button>
+    <button onclick="resetFilters()">Reset Filters</button>
+  </div>
+
+  <h3>Recommended Jobs</h3>
+  <div id="results"></div>
+
+  <h3>Favorites</h3>
+  <div id="favorites"></div>
+  <button onclick="exportFavorites()">Export Favorites</button>
+  <button onclick="clearFavorites()">Clear Favorites</button>
+
+  <script src="week12.js"></script>
+</body>
+</html>

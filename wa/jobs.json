@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Marketing Intern",
+    "company": "Glow Beauty",
+    "location": "New York, NY",
+    "creativity": 0.9,
+    "equityFocus": 0.8,
+    "workLifeBalance": 0.7,
+    "companySize": 0.4
+  },
+  {
+    "title": "Brand Strategy Assistant",
+    "company": "WellCo",
+    "location": "Los Angeles, CA",
+    "creativity": 0.7,
+    "equityFocus": 0.6,
+    "workLifeBalance": 0.6,
+    "companySize": 0.8
+  },
+  {
+    "title": "Creative Partnerships Intern",
+    "company": "Luna Activewear",
+    "location": "Remote",
+    "creativity": 0.85,
+    "equityFocus": 0.9,
+    "workLifeBalance": 0.8,
+    "companySize": 0.3
+  },
+  {
+    "title": "Social Media Coordinator",
+    "company": "Radiant Skincare",
+    "location": "Austin, TX",
+    "creativity": 0.6,
+    "equityFocus": 0.7,
+    "workLifeBalance": 0.7,
+    "companySize": 0.6
+  },
+  {
+    "title": "Partnerships Intern",
+    "company": "Aurora Apparel",
+    "location": "Chicago, IL",
+    "creativity": 0.8,
+    "equityFocus": 0.95,
+    "workLifeBalance": 0.85,
+    "companySize": 0.5
+  }
+]
