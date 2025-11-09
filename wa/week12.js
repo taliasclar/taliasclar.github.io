@@ -42,7 +42,7 @@ function resetFilters() {
 function displayJobs(jobs) {
   resultsDiv.innerHTML = jobs.map(job => `
     <div class="job">
-      <h4>${job.title}</h4>
+      <h3>${job.title}</h3>
       <p>${job.company} — ${job.location}</p>
       <p>Creativity: ${job.creativity}</p>
       <p>Equity Focus: ${job.equityFocus}</p>
