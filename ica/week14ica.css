@@ -1,0 +1,149 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #1a1a1a;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	overflow: hidden;
+	flex-direction: column;
+}
+
+#stickman {
+	width: 300px;
+	height: 300px;
+}
+
+.head {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 4;
+}
+
+.body {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 4;
+}
+
+@keyframes breakdance {
+	0% {
+		transform: rotate(0deg) translateY(0);
+	}
+	25% {
+		transform: rotate(90deg) translateY(-10px);
+	}
+	50% {
+		transform: rotate(180deg) translateY(0);
+	}
+	75% {
+		transform: rotate(270deg) translateY(-10px);
+	}
+	100% {
+		transform: rotate(360deg) translateY(0);
+	}
+}
+
+@keyframes headbob {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(2px) rotate(10deg);
+	}
+}
+
+@keyframes armWave {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(-30deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes legSpin {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(-20deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+#dancer {
+	transform-origin: center center;
+	opacity: 1;
+	transition: all 0.5s ease-in-out;
+}
+
+/* #dancer.dancing {
+	animation: breakdance 4s infinite ease-in-out;
+} */
+
+.dancing .head {
+	animation: headbob 1s infinite ease-in-out;
+	transform-origin: center 25px;
+}
+
+.dancing #leftArm,
+.dancing #rightArm {
+	animation: armWave 1s infinite ease-in-out;
+	transform-origin: 50px 45px;
+}
+
+.dancing #rightArm {
+	animation-delay: 0.5s;
+}
+
+.dancing #leftLeg,
+.dancing #rightLeg {
+	animation: legSpin 1s infinite ease-in-out;
+	transform-origin: 50px 60px;
+}
+
+.dancing #rightLeg {
+	animation-delay: 0.5s;
+}
+
+.glow {
+	filter: drop-shadow(0 0 5px #fff);
+}
+
+#floor {
+	stroke: #333;
+	stroke-width: 2;
+}
+
+#startButton {
+	padding: 15px 30px;
+	font-size: 18px;
+	background: #333;
+	color: white;
+	border: 2px solid #fff;
+	border-radius: 25px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+#startButton:hover {
+	background: #444;
+	transform: scale(1.05);
+}
+
+#startButton.playing {
+	background: #555;
+	transform: scale(0.95);
+}

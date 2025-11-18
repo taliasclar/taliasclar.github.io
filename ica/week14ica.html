@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="week14ica.css">
+</head>
+
+<body>
+<svg id="stickman" viewBox="0 0 100 100">
+	<line id="floor" x1="10" y1="85" x2="90" y2="85" />
+	<g id="dancer" class="glow">
+		<circle class="head" cx="50" cy="25" r="8" />
+		<line class="body" x1="50" y1="33" x2="50" y2="60" />
+		<line id="leftArm" class="body" x1="50" y1="45" x2="30" y2="35" />
+		<line id="rightArm" class="body" x1="50" y1="45" x2="70" y2="35" />
+		<line id="leftLeg" class="body" x1="50" y1="60" x2="30" y2="80" />
+		<line id="rightLeg" class="body" x1="50" y1="60" x2="70" y2="80" />
+	</g>
+</svg>
+
+<button id="startButton">Start Dancing!</button>
+<a href="https://raw.githubusercontent.com/tommykho/tommykho.github.io/master/assets/Footloose.ogg">download</a>
+
+<audio id="music" loop>
+	<source src="https://raw.githubusercontent.com/tommykho/tommykho.github.io/master/assets/Footloose.ogg" type="audio/ogg">
+	Your browser does not support the audio element.
+</audio>
+       <script src="week14ica.js"></script> 
+</body>
