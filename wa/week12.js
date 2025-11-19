@@ -9,8 +9,7 @@ async function loadJobs() {
   displayJobs(allJobs);
 }
 loadJobs();
-
-// Apply filters
+//Apply filters 
 function applyFilters() {
   const creativePref = parseFloat(document.querySelector("#creative").value);
   const equityPref = parseFloat(document.querySelector("#equity").value);
@@ -18,7 +17,6 @@ function applyFilters() {
   const sizePref = parseFloat(document.querySelector("#companySize").value);
 
   const filtered = allJobs.map(job => {
-    // match calculation: average of how close each property is to user preference
     const score = (
       (1 - Math.abs(creativePref - job.creativity)) +
       (1 - Math.abs(equityPref - job.equityFocus)) +
@@ -28,6 +26,16 @@ function applyFilters() {
 
     return { ...job, matchScore: (score * 100).toFixed(0) };
   });
+
+  // NEW: SORTING ADDED HERE
+  const sortValue = document.querySelector("#sort").value;
+
+  if (sortValue === "high") {
+    filtered.sort((a, b) => b.matchScore - a.matchScore);
+  } 
+  else if (sortValue === "low") {
+    filtered.sort((a, b) => a.matchScore - b.matchScore);
+  }
 
   displayJobs(filtered);
 }

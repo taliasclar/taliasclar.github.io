@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let isPlaying = false;
     let audioContext = null;
 
-    // Initial dancer position (centered in SVG viewBox)
+    // Initial dancer position
     let targetX = 50;
     let targetY = 50;
     let currentX = 50;
@@ -23,17 +23,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Smoothly move and rotate dancer toward mouse
+    // move and rotate dancer toward mouse
     document.addEventListener("mousemove", (e) => {
         if (!isPlaying) return;
 
         const rect = svg.getBoundingClientRect();
 
-        // Mouse position relative to SVG
         targetX = ((e.clientX - rect.left) / rect.width) * 100;
         targetY = ((e.clientY - rect.top) / rect.height) * 100;
 
-        // Angle between current center and mouse pointer
         const angle = Math.atan2(targetY - currentY, targetX - currentX) * (180 / Math.PI);
         dancer.style.transform = `translate(${currentX - 50}px, ${currentY - 50}px) rotate(${angle}deg)`;
         dancer.style.transformOrigin = "50% 50%";
@@ -42,11 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
     function animate() {
         if (!isPlaying) return;
 
-        // Smooth lerp toward target
         currentX += (targetX - currentX) * 0.1;
         currentY += (targetY - currentY) * 0.1;
 
-        // Keep calling animate
         requestAnimationFrame(animate);
     }
 

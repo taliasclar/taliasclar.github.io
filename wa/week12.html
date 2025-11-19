@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EquiJobs</title>
   <link rel="stylesheet" href="week12.css">
 </head>
+
 <body>
   <header>
     <h1>EquiJobs</h1>
@@ -26,6 +28,13 @@
       </label>
       <label for="companySize">Company Size (0=small, 1=large)
         <input type="range" id="companySize" min="0" max="1" step="0.1" value="0.5">
+      </label>
+      <label for="sort">Sort By:
+        <select id="sort" onchange="applyFilters()">
+          <option value="none">None</option>
+          <option value="high">Match Score (High → Low)</option>
+          <option value="low">Match Score (Low → High)</option>
+        </select>
       </label>
 
       <button onclick="applyFilters()">Apply Filters</button>
@@ -49,4 +58,5 @@
 
   <script src="week12.js"></script>
 </body>
+
 </html>
